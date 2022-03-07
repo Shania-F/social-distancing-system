@@ -24,9 +24,9 @@ vid_source=cv2.VideoCapture(0)
 text_dict={0:'Mask ON',1:'No Mask'}
 rect_color_dict={0:(0,255,0),1:(0,0,255)}
 
-SUBJECT = "Subject"   
-TEXT = "One Visitor violated Face Mask Policy. Check the camera to recognize user. A Person has been detected without a face mask in the Hotel Lobby Area 9. Please Alert the authorities."
- 
+SUBJECT = "No Face Mask"   
+TEXT = "Visitor has been detected without a face mask. Entrance is denied."
+
 # Capacity Control Parameters
 cap = 1000
 allowedcap=0.5 * cap; #Currently: 50%
