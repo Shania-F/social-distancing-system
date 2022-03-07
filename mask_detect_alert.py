@@ -24,8 +24,8 @@ vid_source=cv2.VideoCapture(0)
 text_dict={0:'Mask ON',1:'No Mask'}
 rect_color_dict={0:(0,255,0),1:(0,0,255)}
 
-SUBJECT = "Subject"   
-TEXT = "One Visitor violated Face Mask Policy. Check the camera to recognize user. A Person has been detected without a face mask in the Hotel Lobby Area 9. Please Alert the authorities."
+SUBJECT = "No Face Mask"   
+TEXT = "Visitor has been detected without a face mask. Entrance is denied."
  
 
 # While Loop to continuously detect camera feed
@@ -52,7 +52,7 @@ while(True):
         # If label = 1 then it means wearing No Mask and 0 means wearing Mask
         if (label == 1):
             # Throw a Warning Message to tell user to wear a mask if not wearing one. This will stay
-            #open and No Access will be given He/She wears the mask
+            # open and No Access will be given till they wear mask
             messagebox.showwarning("Warning","Access Denied. Please wear a Face Mask")
             
             # Send an email to the administrator if access denied/user not wearing face mask 
@@ -60,8 +60,8 @@ while(True):
             mail = smtplib.SMTP('smtp.gmail.com', 587)
             mail.ehlo()
             mail.starttls()
-           # mail.login('test@gmail.com','test')
-           # mail.sendmail('test@gmail.com','test@gmail.com',message)
+            mail.login('test@gmail.com','test')
+            mail.sendmail('test@gmail.com','test@gmail.com',message)
             mail.close
         else:
             pass
