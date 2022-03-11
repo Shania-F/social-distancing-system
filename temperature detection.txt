@@ -1,0 +1,21 @@
+// using LM35 and arduino uno
+float temp;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  temp=analogRead(A0);
+  temp=temp*0.48828125;
+  Serial.print("TEMPERATURE: ");
+  Serial.print(temp);
+  // print degree symbol
+  Serial.write(176); 
+  Serial.println("C");
+  Serial.println();
+  if(temp < 37.5) { Serial.print("TEMP. OK"); }
+  else { Serial.print("TEMP. HIGH"); }
+  Serial.println();
+  delay(1000);
+}
