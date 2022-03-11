@@ -8,7 +8,7 @@ import smtplib
 root = tkinter.Tk()
 root.withdraw()
 
-model = load_model('face_mask_detection_alert_system.h5') # trained deep learning model
+model = load_model('mask_detection_model.h5') # loading trained deep learning model
 face_det_classifier=cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 vid_source=cv2.VideoCapture(0)
